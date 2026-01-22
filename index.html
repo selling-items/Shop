@@ -7,29 +7,45 @@
 </head>
 <body>
 
-  <header>
-    <h1>🧠 Brainrot Shop</h1>
-    <p>Fan-made Roblox brainrots</p>
-  </header>
+<header>
+  <h1>🧠 Brainrot Shop</h1>
+  <p>Fan-made Roblox brainrots • Pay in school</p>
+</header>
 
-  <section class="shop">
-    <div class="item">
-      <h2>Brainrot #1</h2>
-      <p>Price: €1 (pay in school)</p>
-      <button onclick="order('Brainrot #1')">Order</button>
-    </div>
+<section class="shop">
+  <div class="item">
+    <img src="https://www.bing.com/th/id/OIP.uF4xhcEH4QKRB9cX8sMSeAHaFA?w=222&h=211&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="Brainrot 1">
+    <h2>Brainrot #1</h2>
+    <p>Price: 1,000 IQD</p>
+    <button onclick="openOrder('Brainrot #1')">Order</button>
+  </div>
 
-    <div class="item">
-      <h2>Brainrot #2</h2>
-      <p>Price: €2 (pay in school)</p>
-      <button onclick="order('Brainrot #2')">Order</button>
-    </div>
-  </section>
+  <div class="item">
+    <img src="https://www.bing.com/th/id/OIP.uF4xhcEH4QKRB9cX8sMSeAHaFA?w=222&h=211&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="Brainrot 2">
+    <h2>Brainrot #2</h2>
+    <p>Price: 2,000 IQD</p>
+    <button onclick="openOrder('Brainrot #2')">Order</button>
+  </div>
+</section>
 
-  <footer>
-    <p>Fan-made content. Not affiliated with Roblox.</p>
-  </footer>
+<!-- Order Form -->
+<div id="orderForm" class="modal">
+  <div class="modal-content">
+    <h2 id="orderTitle"></h2>
 
-  <script src="script.js"></script>
+    <input id="realName" placeholder="Real Name">
+    <input id="robloxUser" placeholder="Roblox Username">
+    <input id="discordUser" placeholder="Discord Username (optional)">
+
+    <button onclick="submitOrder()">Submit Order</button>
+    <button class="close" onclick="closeOrder()">Cancel</button>
+  </div>
+</div>
+
+<footer>
+  <p>Fan-made content. Not affiliated with Roblox.</p>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
