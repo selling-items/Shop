@@ -62,7 +62,7 @@
 <body>
 
 <header>
-  <h1>🧠 Place Your Order</h1>
+  <h1>Place Your Order</h1>
   <p>Brainrot Shop</p>
 </header>
 
@@ -79,7 +79,7 @@
   <button onclick="submitOrder()">Submit Order</button>
 
   <div class="thank-you" id="thankYou">
-    <h2>Order Sent 🧠</h2>
+    <h2>Order Sent!</h2>
     <p>Pay in school to receive your brainrot.</p>
   </div>
 
@@ -105,7 +105,7 @@ function submitOrder() {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       embeds: [{
-        title: "🧠 New Brainrot Order",
+        title: "New Brainrot Order",
         color: 0x6b00ff,
         fields: [
           { name: "Real Name", value: name },
