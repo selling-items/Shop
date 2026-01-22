@@ -98,12 +98,7 @@ function submitOrder() {
     return;
   }
 
-  const parts = [
-    "https://discord.com/api/webhooks/1463930896511139949",
-    "/VZ9JIyPPIH3SeHwr1ZqlKviX0ixGxerVk0CQ1VpPOQf9",
-    "Emo06CWmHsfwFEEMfwXt_abX"
-  ];
-  const webhookURL = atob(parts[0]) + atob(parts[1]) + atob(parts[2]);
+  const webhookURL = "https://discord.com/api/webhooks/1463930896511139949/VZ9JIyPPIH3SeHwr1ZqlKviX0ixGxerVk0CQ1VpPOQf9Emo06CWmHsfwFEEMfwXt_abX"
 
   fetch(webhookURL, {
     method: "POST",
