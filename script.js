@@ -1,4 +1,4 @@
-const webhookURL = "PASTE_YOUR_DISCORD_WEBHOOK_URL_HERE";
+const webhookURL = "https://discord.com/api/webhooks/1463930896511139949/VZ9JIyPPIH3SeHwr1ZqlKviX0ixGxerVk0CQ1VpPOQf9Emo06CWmHsfwFEEMfwXt_abX";
 
 let selectedItem = "";
 
