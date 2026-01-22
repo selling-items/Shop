@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Order | Brainrot Shop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0e0e0e;
+      color: #eaeaea;
+      margin: 0;
+    }
+    header {
+      background: linear-gradient(135deg, #6b00ff, #9b00ff);
+      padding: 2rem;
+      text-align: center;
+    }
+    .container {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 0.8rem;
+      margin-top: 1rem;
+      border-radius: 10px;
+      border: none;
+      font-size: 1rem;
+    }
+    input, select {
+      background: #1a1a1a;
+      color: white;
+    }
+    button {
+      background: #6b00ff;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #5200cc;
+    }
+    .thank-you {
+      display: none;
+      margin-top: 2rem;
+      background: #141414;
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+    }
+    a {
+      color: #9b7cff;
+      text-decoration: none;
+      display: block;
+      margin-top: 2rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🧠 Place Your Order</h1>
+  <p>Brainrot Shop</p>
+</header>
+
+<div class="container">
+  <input id="name" placeholder="Real Name">
+  <input id="roblox" placeholder="Roblox Username">
+  <input id="discord" placeholder="Discord Username (optional)">
+
+  <select id="item">
+    <option value="Brainrot #1 (1,000 IQD)">Brainrot #1 – 1,000 IQD</option>
+    <option value="Brainrot #2 (2,000 IQD)">Brainrot #2 – 2,000 IQD</option>
+  </select>
+
+  <button onclick="submitOrder()">Submit Order</button>
+
+  <div class="thank-you" id="thankYou">
+    <h2>Order Sent 🧠</h2>
+    <p>Pay in school to receive your brainrot.</p>
+  </div>
+
+  <a href="index.html">← Back to Shop</a>
+</div>
+
+<script>
+function submitOrder() {
+  const name = document.getElementById("name").value.trim();
+  const roblox = document.getElementById("roblox").value.trim();
+  const discord = document.getElementById("discord").value.trim() || "Not provided";
+  const item = document.getElementById("item").value;
+
+  if (!name || !roblox) {
+    alert("Fill in required fields.");
+    return;
+  }
+
+  const parts = [
+    "https://discord.com/api/webhooks/1463930896511139949",
+    "/VZ9JIyPPIH3SeHwr1ZqlKviX0ixGxerVk0CQ1VpPOQf9",
+    "Emo06CWmHsfwFEEMfwXt_abX"
+  ];
+  const webhookURL = atob(parts[0]) + atob(parts[1]) + atob(parts[2]);
+
+  fetch(webhookURL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      embeds: [{
+        title: "🧠 New Brainrot Order",
+        color: 0x6b00ff,
+        fields: [
+          { name: "Real Name", value: name },
+          { name: "Roblox Username", value: roblox },
+          { name: "Discord Username", value: discord },
+          { name: "Order", value: item }
+        ],
+        footer: { text: "Payment: In school (IQD)" },
+        timestamp: new Date()
+      }]
+    })
+  });
+
+  document.getElementById("thankYou").style.display = "block";
+}
+</script>
+
+</body>
+</html>
