@@ -1,7 +1,7 @@
 body {
-  font-family: Arial, sans-serif;
-  background: #111;
+  background: #0f0f0f;
   color: white;
+  font-family: Arial, sans-serif;
   text-align: center;
 }
 
@@ -13,18 +13,53 @@ header {
   display: flex;
   justify-content: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .item {
-  background: #222;
-  padding: 20px;
+  background: #1c1c1c;
+  padding: 15px;
+  border-radius: 12px;
+  width: 220px;
+}
+
+.item img {
+  width: 100%;
   border-radius: 10px;
-  width: 200px;
 }
 
 button {
-  padding: 10px;
+  margin-top: 10px;
+  padding: 8px;
+  width: 100%;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  background: #222;
+  padding: 20px;
+  width: 300px;
+  margin: 100px auto;
+  border-radius: 10px;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin: 6px 0;
+  border-radius: 5px;
+  border: none;
+}
+
+.close {
+  background: #444;
 }
